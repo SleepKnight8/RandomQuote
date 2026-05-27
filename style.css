@@ -64,3 +64,6 @@ body {
     color: #ffffff;
     text-shadow: 0 0 10px #f5e05a;
 }
+#QuoteProgress {
+    margin-top: 30px;
+}
