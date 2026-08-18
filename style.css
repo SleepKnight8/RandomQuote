@@ -1,69 +1,375 @@
-body {
+/* =========================
+   RESET
+   ========================= */
+
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #13171c 0%, #1b2028 100%);
-    text-shadow: #f5e05a 8px 8px 20px;
-    color: #f5e05a;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-sizing: border-box;
 }
 
-#quote-container {
-    margin-top: 8%;
+
+/* =========================
+   THEME VARIABLES
+   ========================= */
+
+body {
+
+    --main-color: #f5e05a;
+
+    --background-1: #13171c;
+    --background-2: #1b2028;
+
+    --card: #1b2129;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--background-1) 0%,
+            var(--background-2) 100%
+        );
+
+    color: var(--main-color);
+
+    min-height: 100vh;
+
     display: flex;
+
     flex-direction: column;
-    border: #f5e05a dashed 8px;
+
+    align-items: center;
+
+    text-align: center;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================
+   HIDE THEME RADIO BUTTONS
+   ========================= */
+
+#yellowMode,
+#purpleMode {
+    display: none;
+}
+
+
+/* =========================
+   THEME SWITCH
+   ========================= */
+
+.theme-switch {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+    margin-bottom: 10px;
+}
+
+
+.theme-button {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 12px;
+
+    background: #262f3b;
+
+    border: 2px solid transparent;
+
+    cursor: pointer;
+
+    font-size: 1.2rem;
+
+    transition:
+        transform 0.2s ease,
+        border 0.2s ease;
+}
+
+
+.theme-button:hover {
+
+    transform: scale(1.08);
+
+}
+
+
+/* Selected yellow */
+
+#yellowMode:checked ~ .theme-switch
+label[for="yellowMode"] {
+
+    border-color: #f5e05a;
+
+}
+
+
+/* Selected purple */
+
+#purpleMode:checked ~ .theme-switch
+label[for="purpleMode"] {
+
+    border-color: #b58cff;
+
+}
+
+
+/* =========================
+   TITLE
+   ========================= */
+
+h1 {
+
+    color: var(--main-color);
+
+    margin-top: 10px;
+
+    transition: color 0.3s ease;
+}
+
+
+/* =========================
+   QUOTE CONTAINER
+   ========================= */
+
+#quote-container {
+
+    margin-top: 8%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border: var(--main-color) dashed 8px;
+
     border-radius: 10px;
 
     justify-content: center;
+
     align-items: center;
+
     text-align: center;
 
     width: min(500px, 80vw);
+
     min-height: 200px;
+
     padding: 20px;
+
+    transition:
+        border-color 0.3s ease;
 }
+
+
+/* =========================
+   QUOTE
+   ========================= */
 
 #quotetext-container {
-    text-shadow: #f5e05a 8px 8px 20px;
+
+    color: var(--main-color);
+
+    text-shadow:
+        var(--main-color)
+        8px 8px 20px;
 }
+
 
 #author-container {
-    text-shadow: #f5e05a 3px 3px 15px;
+
+    color: var(--main-color);
+
+    text-shadow:
+        var(--main-color)
+        3px 3px 15px;
 }
 
+
+/* =========================
+   BUTTON
+   ========================= */
 
 #buttons-container {
+
     margin-top: 1%;
 }
+
+
 #buttons-container button {
-    background: #f5e05a;
+
+    background: var(--main-color);
+
+    color: #13171c;
+
     border-radius: 10px;
-    border: #f5e05a;
+
+    border: none;
+
+    padding: 10px 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
 
 #buttons-container button:hover {
+
     background: #887912;
-    color: #13171c;
-    cursor: pointer;
+
+    transform: translateY(-2px);
+
 }
+
+
+/* =========================
+   PROGRESS
+   ========================= */
+
+#QuoteProgress {
+
+    margin-top: 30px;
+
+    color: var(--main-color);
+
+}
+
+
+/* =========================
+   DEVELOPER
+   ========================= */
 
 .logo {
+
     margin-top: 1%;
-    color: #f5e05a;
+
+    color: var(--main-color);
+
     text-decoration: none;
+
     font-weight: bold;
-    transition: 0.3s;
+
+    transition:
+        0.3s;
 }
 
+
 .logo:hover {
+
     color: #ffffff;
-    text-shadow: 0 0 10px #f5e05a;
+
+    text-shadow:
+        0 0 10px var(--main-color);
+
 }
-#QuoteProgress {
-    margin-top: 30px;
+
+
+#copyright {
+
+    margin-top: 10px;
+
+    color: #999;
+
+    font-size: 0.8rem;
+
+}
+
+
+/* =========================
+   PURPLE THEME
+   ========================= */
+
+body:has(#purpleMode:checked) {
+
+    --main-color: #b58cff;
+
+    --background-1: #101010;
+    --background-2: #101010;
+
+    --card: #181818;
+
+}
+
+
+/* Purple button */
+
+body:has(#purpleMode:checked)
+#buttons-container button {
+
+    color: #101010;
+
+}
+
+
+/* Purple hover */
+
+body:has(#purpleMode:checked)
+#buttons-container button:hover {
+
+    background: #8064c2;
+
+    color: #101010;
+
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    #quote-container {
+
+        width: 80vw;
+
+        min-height: 180px;
+
+        padding: 15px;
+
+    }
+
+
+    #quote {
+
+        font-size: 1.2rem;
+
+    }
+
+
+    #author {
+
+        font-size: 1rem;
+
+    }
+
 }
