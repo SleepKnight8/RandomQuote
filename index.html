@@ -1,43 +1,130 @@
 <!doctype html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
     <title>RandomQuote</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
-    <h1>RandomQuote</h1>
-    <div id="quote-container">
-        <div id="quotetext-container">
-            <h2 id="quote">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </h2>
-        </div>
-        <div id="author-container">
-            <h3 id="author">Bob</h3>
-        </div>
+
+    <!-- Theme Switch -->
+
+    <input
+        type="radio"
+        name="theme"
+        id="yellowMode"
+        checked>
+
+    <input
+        type="radio"
+        name="theme"
+        id="purpleMode">
+
+
+    <div class="theme-switch">
+
+        <label
+            for="yellowMode"
+            class="theme-button">
+            🟡
+        </label>
+
+        <label
+            for="purpleMode"
+            class="theme-button">
+            🟣
+        </label>
+
     </div>
+
+
+    <h1>RandomQuote</h1>
+
+
+    <div id="quote-container">
+
+        <div id="quotetext-container">
+
+            <h2 id="quote">
+                Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit.
+            </h2>
+
+        </div>
+
+
+        <div id="author-container">
+
+            <h3 id="author">
+                Bob
+            </h3>
+
+        </div>
+
+    </div>
+
+
     <br>
+
+
     <div id="buttons-container">
-        <button id="new-quote-button" onclick="RandomQuote()">New Quote</button>
+
+        <button
+            id="new-quote-button"
+            onclick="RandomQuote()">
+
+            New Quote
+
+        </button>
+
     </div>
 
 
     <div id="QuoteProgress">
-            <h3 id="quote-progress-text">
-                Quote Explored: 0/1454 (0%)
-            </h3>
+
+        <h3 id="quote-progress-text">
+
+            Quote Explored:
+            0/1454 (0%)
+
+        </h3>
+
     </div>
 
-    <h2>The Best Developer</h2>
 
-    <a href="https://github.com/SleepKnight8" class="logo" target="_blank">
+    <h2>
+        The Best Developer
+    </h2>
+
+
+    <a
+        href="https://github.com/SleepKnight8"
+        class="logo"
+        target="_blank">
+
         SleepKnight8
+
     </a>
 
+
+    <p id="copyright">
+        © 2026 SleepKnight8. All rights reserved.
+    </p>
+
+
     <script src="index.js"></script>
+
 </body>
+
 </html>
