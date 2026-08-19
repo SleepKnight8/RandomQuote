@@ -11,43 +11,27 @@
 
     <title>RandomQuote</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SleepKnight8/SleepKnight8_Themes/themes.css">
     <link rel="stylesheet" href="style.css">
 
 </head>
 
 
-<body>
-
-    <!-- Theme Switch -->
-
-    <input
-        type="radio"
-        name="theme"
-        id="yellowMode"
-        checked>
-
-    <input
-        type="radio"
-        name="theme"
-        id="purpleMode">
-
-
+<body class="sk-yellow">
     <div class="theme-switch">
 
-        <label
-            for="yellowMode"
-            class="theme-button">
+        <button
+            id="yellowMode"
+            onclick="setTheme('yellow')">
             🟡
-        </label>
+        </button>
 
-        <label
-            for="purpleMode"
-            class="theme-button">
+        <button
+            id="purpleMode"
+            onclick="setTheme('purple')">
             🟣
-        </label>
-
+        </button>
     </div>
-
 
     <h1>RandomQuote</h1>
 
@@ -122,7 +106,7 @@
         © 2026 SleepKnight8. All rights reserved.
     </p>
 
-
+    <script src="https://cdn.jsdelivr.net/gh/SleepKnight8/SleepKnight8_Themes/themes.js"></script>
     <script src="index.js"></script>
 
 </body>
